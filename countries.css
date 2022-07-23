@@ -1,0 +1,26 @@
+
+#countries{
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+}
+.countryDiv {
+    border: 2px solid black;
+    width: 320px;
+    height: 320px;
+    margin: 10px;
+    background-color:bisque;
+    border-radius: 7px;
+    padding-left: 15px;
+}
+h3, h4, h5 {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+h3 {
+    margin-top: 10px;
+}
+h3, h4 {
+    color:orangered;
+}
