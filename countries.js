@@ -1,6 +1,9 @@
 //global variables
 const countriesDiv = document.getElementById("countries");
-let flag = 0;
+let flag = "home";
+const search = document.getElementById("search-input");
+const searchBtn = document.getElementById("search-btn");
+
 
 // Load rest countries api
 const loadCountries = () => {
@@ -14,60 +17,29 @@ loadCountries();
 
 //load all countries api 
 const displayCountries = (flag, countries) => {
-    if(flag==0){
+    if(flag=="home"){
         countries.forEach(country => allCountries(country));  
     }
-    else if(flag==1){
-        console.log(countries);
+    else if(flag==search.value){
         countries.forEach(country => {
-            if(country.continents[0].includes("Asia")){
+            if(country.name.common.toLowerCase().includes(flag.toLowerCase())){
                 allCountries(country);
             }
         });
     }
-    else if(flag==2){
-        console.log(countries);
+    else {
         countries.forEach(country => {
-            if(country.continents[0].includes("Europe")){
-                allCountries(country);
-            }
-        });
-    }
-    else if(flag==3){
-        console.log(countries);
-        countries.forEach(country => {
-            if(country.continents[0].includes("Africa")){
-                allCountries(country);
-            }
-        });
-    }
-    else if(flag==4){
-        console.log(countries);
-        countries.forEach(country => {
-            if(country.continents[0].includes("America")){
-                allCountries(country);
-            }
-        });
-    }
-    else if(flag==5){
-        console.log(countries);
-        countries.forEach(country => {
-            if(country.continents[0].includes("Oceania")){
-                allCountries(country);
-            }
-        });
-    }
-    else if(flag==6){
-        console.log(countries);
-        countries.forEach(country => {
-            if(country.continents[0].includes("Antarctica")){
+            if(country.continents[0].includes(flag)){
                 allCountries(country);
             }
         });
     }
 }
 
-//if 'world icon' and homepage is clicked
+
+
+
+//display desire countries
 const allCountries = country => {
     const {name, capital, area, population, languages, currencies, continents} = country;
         const countryDiv = document.createElement('div');
@@ -85,46 +57,52 @@ const allCountries = country => {
         countriesDiv.appendChild(countryDiv);
 }
 
-//If asia is clicked then
+//If home is clicked then
 const home = () => {
-    flag = 0;
+    flag = "home";
     countriesDiv.textContent = "";
     loadCountries(flag);
 }
 //If asia is clicked then
 const asia = () => {
-    flag = 1;
+    flag = "Asia";
     countriesDiv.textContent = "";
     loadCountries(flag);
     
 }
 //If europe is clicked then
 const europe = () => {
-    flag = 2;
+    flag = "Europe";
     countriesDiv.textContent = "";
     loadCountries(flag);
 }
 //If africa is clicked then
 const africa = () => {
-    flag = 3;
+    flag = "Africa";
     countriesDiv.textContent = "";
     loadCountries(flag);
 }
 //If usa is clicked then
 const usa = () => {
-    flag = 4;
+    flag = "America";
     countriesDiv.textContent = "";
     loadCountries(flag);
 }
 //If oceania is clicked then
 const oceania = () => {
-    flag = 5;
+    flag = "Oceania";
     countriesDiv.textContent = "";
     loadCountries(flag);
 }
 //If antarctica is clicked then
 const antarctica = () => {
-    flag = 6;
+    flag = "Antarctica";
+    countriesDiv.textContent = "";
+    loadCountries(flag);
+}
+
+const searchCountry = () => {
+    flag = search.value;
     countriesDiv.textContent = "";
     loadCountries(flag);
 }
