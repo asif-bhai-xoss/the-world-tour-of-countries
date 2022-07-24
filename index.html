@@ -20,7 +20,9 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#" onclick="loadCountries()">Navbar</a>
+          <a class="navbar-brand" href="#" onclick="home()"
+            ><img src="images/favicon.ico" alt=""
+          /></a>
           <button
             class="navbar-toggler"
             type="button"
@@ -39,27 +41,35 @@
                   class="nav-link active"
                   aria-current="page"
                   href="#"
-                  onclick="loadCountries()"
+                  onclick="home()"
                   >Home</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="#">Asia</a>
+                <a class="nav-link active" onclick="asia()" href="#">Asia</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="#">Europe</a>
+                <a class="nav-link active" onclick="europe()" href="#"
+                  >Europe</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="#">Africa</a>
+                <a class="nav-link active" onclick="africa()" href="#"
+                  >Africa</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="#">USA</a>
+                <a class="nav-link active" onclick="usa()" href="#">USA</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="#">Oceania</a>
+                <a class="nav-link active" onclick="oceania()" href="#"
+                  >Oceania</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="#">Antarctica</a>
+                <a class="nav-link active" onclick="antarctica()" href="#"
+                  >Antarctica</a
+                >
               </li>
             </ul>
             <form class="d-flex" role="search">
